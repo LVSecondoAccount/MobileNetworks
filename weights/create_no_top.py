@@ -14,7 +14,7 @@ end_str = "_tf.h5"
 for alpha in alphas:
     for size in sizes:
         fn = base + alpha + "_" + str(size) + end_str
-        print("Working on file : %s" % fn)
+        print(("Working on file : %s" % fn))
 
         new_fn = fn[:-3] + "_no_top.h5"
         copyfile(fn, new_fn)
@@ -29,7 +29,7 @@ for alpha in alphas:
 
         f.attrs['layer_names'] = layer_names_keep
         f.close()
-        print("Created 'No-Top' Weights for %s" % fn)
+        print(("Created 'No-Top' Weights for %s" % fn))
 
 
 

@@ -41,10 +41,10 @@ with tf.Graph().as_default():
         sorted_inds = [i[0] for i in sorted(enumerate(-probabilities), key=lambda x: x[1])]
 
     print("End Points : ")
-    for k, v in end_points.items():
-        print(k, '\t', v)
+    for k, v in list(end_points.items()):
+        print((k, '\t', v))
 
-    print('\nPredicted:', decode_predictions(probabilities))
+    print(('\nPredicted:', decode_predictions(probabilities)))
 
     graph = sess.graph
 

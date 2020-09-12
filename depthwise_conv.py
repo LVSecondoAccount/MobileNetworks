@@ -5,7 +5,7 @@ This is a modification of the SeparableConv2D code in Keras,
 to perform just the Depthwise Convolution (1st step) of the
 Depthwise Separable Convolution layer.
 '''
-from __future__ import absolute_import
+
 
 from keras import backend as K
 from keras import initializers

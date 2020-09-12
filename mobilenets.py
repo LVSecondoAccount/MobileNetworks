@@ -3,9 +3,9 @@
 - [MobileNets: Efficient Convolutional Neural Networks for
    Mobile Vision Applications](https://arxiv.org/pdf/1704.04861.pdf))
 '''
-from __future__ import print_function
-from __future__ import absolute_import
-from __future__ import division
+
+
+
 
 from keras.models import Model
 from keras.layers.core import Activation, Dropout, Reshape

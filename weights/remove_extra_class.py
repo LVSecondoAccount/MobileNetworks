@@ -14,7 +14,7 @@ end_str = "_tf.h5"
 for alpha in alphas:
     for size in sizes:
         fn = base + alpha + "_" + str(size) + end_str
-        print("Working on file : %s" % fn)
+        print(("Working on file : %s" % fn))
         f = h5py.File(fn)
         classification_layer = f.attrs['layer_names'][-3]
         classification_dataset = f[classification_layer]
@@ -37,6 +37,6 @@ for alpha in alphas:
 
         f.close()
 
-        print("Finished processing weight file : %s" % (fn))
+        print(("Finished processing weight file : %s" % (fn)))
 
 print("Finished processing all weights")

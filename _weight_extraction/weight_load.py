@@ -11,7 +11,7 @@ weight_path = 'weights/*.npy'
 fns = glob.glob(weight_path)
 
 for i, fn in enumerate(fns):
-    print("File : ", i + 1, ": ", fn)
+    print(("File : ", i + 1, ": ", fn))
 
 conv1_bn = fns[0:4]
 conv1_wb = fns[4:5]
@@ -33,14 +33,14 @@ dw9 = fns[125:135]
 
 fcn = fns[135:]
 
-print("\nInitial Conv-BN : ", conv1_wb, conv1_bn)
+print(("\nInitial Conv-BN : ", conv1_wb, conv1_bn))
 
 dwlist = [dw1, dw2, dw3, dw4, dw5, dw6, dw7, dw8, dw9, dw10, dw11, dw12, dw13]
 
 for i, dw in enumerate(dwlist):
-    print('DW block %d' % (i + 1), dw)
+    print(('DW block %d' % (i + 1), dw))
 
-print("Final dense layer", fcn)
+print(("Final dense layer", fcn))
 print()
 
 #for i, layer in enumerate(model.layers):
@@ -84,7 +84,7 @@ for i, dw in enumerate(dwlist):
     layer_weights_saved[layer_index + 3] = True
     layer_weights_saved[layer_index + 4] = True
 
-    print('Loaded DW layer %d weights' % (i + 1))
+    print(('Loaded DW layer %d weights' % (i + 1)))
     layer_index += 6
 
 fc_weights_bias = [np.load(fcn[1]), np.load(fcn[0])]
@@ -101,7 +101,7 @@ print('\nBegin sanity check...')
 for layer_id, has_weights in enumerate(layer_has_weights):
     if has_weights and not layer_weights_saved[layer_id]:
         # weights were not saved! report
-        print("Layer id %d (%s) weights were not saved!" % (layer_id, model.layers[layer_id].name))
+        print(("Layer id %d (%s) weights were not saved!" % (layer_id, model.layers[layer_id].name)))
 
 print("Sanity check complete!")
 
